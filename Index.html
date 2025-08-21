@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Sneha 💐</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0 0%, #f5fafc 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    #main-content {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #music-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(90deg, #ff87a2, #ffb1cd);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 3px 10px #ffb1cd88;
+    }
+    #music-btn:hover {
+      background: linear-gradient(90deg, #ce4371, #ff87a2);
+    }
+
+    .balloon {
+      width: 130px;
+      height: 180px;
+      background: radial-gradient(circle at 60% 40%, #ff87a2 80%, #ffb1cd 100%);
+      border-radius: 60% 60% 55% 55% / 65% 65% 43% 43%;
+      position: relative;
+      animation: float 3s infinite ease-in-out;
+      margin: auto;
+      cursor: pointer;
+      box-shadow: 0 8px 25px #ffb1cd99;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0);}
+      50% { transform: translateY(-15px);}
+      100% { transform: translateY(0);}
+    }
+
+    .balloon::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 55px;
+      bottom: -40px;
+      width: 6px;
+      height: 40px;
+      background: #c88569;
+      border-radius: 3px;
+    }
+
+    .popup-message {
+      font-size: 2rem;
+      color: #ce4371;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeIn 1.2s;
+      font-family: 'Dancing Script', cursive, 'Poppins', sans-serif;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
+    .next-btn {
+      margin-top: 40px;
+      padding: 14px 36px;
+      font-size: 1.2rem;
+      background: linear-gradient(90deg, #ff87a2 0%, #ffb1cd 100%);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 3px 12px #ffb1cd44;
+      transition: background 0.3s;
+    }
+
+    .next-btn:hover {
+      background: linear-gradient(90deg, #ce4371 0%, #ff87a2 100%);
+    }
+
+    .hearts-game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hearts-row {
+      margin: 40px 0 20px 0;
+      display: flex;
+      gap: 35px;
+    }
+
+    .heart {
+      font-size: 2.8rem;
+      color: #e63946;
+      cursor: pointer;
+      transition: transform 0.2s;
+      filter: drop-shadow(0 2px 4px #e6394644);
+    }
+
+    .heart.collected {
+      color: #ffb1cd;
+      transform: scale(1.3) rotate(-18deg);
+    }
+
+    .lovely-blast {
+      font-size: 1.5rem;
+      background: linear-gradient(90deg, #ffb1cd 0%, #ffe2f7 100%);
+      border-radius: 30px;
+      padding: 28px 18px;
+      margin-top: 30px;
+      color: #d43460;
+      font-family: 'Dancing Script', cursive, 'Poppins', sans-serif;
+      animation: blast 1.2s;
+      box-shadow: 0 2px 10px #ffb1cd66;
+    }
+
+    @keyframes blast {
+      0% { opacity: 0; transform: scale(0.7);}
+      80% { opacity: 1; transform: scale(1.1);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+
+    .surprise-img {
+      font-size:3rem;
+      cursor: pointer;
+      margin-top: 40px;
+    }
+
+    .vip-card {
+      margin-top: 30px;
+      padding: 25px 20px;
+      background: linear-gradient(135deg,#ffe6f0,#ffb1cd);
+      border-radius: 25px;
+      color: #d43460;
+      font-size: 1.4rem;
+      font-weight: bold;
+      box-shadow: 0 4px 15px #ffb1cd77;
+      animation: fadeIn 1.2s;
+      font-family: 'Dancing Script', cursive,'Poppins',sans-serif;
+      text-align:left;
+    }
+
+    .final-message {
+      font-size: 1.4rem;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #f5fafc 0%, #ffb1cd 100%);
+      border-radius: 35px;
+      color: #ce4371;
+      box-shadow: 0 3px 12px #ffb1cd55;
+      margin: 30px auto;
+      max-width: 600px;
+      font-family: 'Dancing Script', cursive, 'Poppins', sans-serif;
+      animation: fadeIn 2s;
+    }
+
+    .cute-effect {
+      animation: cutePulse 2s infinite;
+    }
+
+    @keyframes cutePulse {
+      0%,100%{box-shadow:0 0 24px #ffb1cd55;}
+      50%{box-shadow:0 0 36px #ce437155;}
+    }
+
+  </style>
+</head>
+<body>
+<div id="main-content"></div>
+
+<audio id="bg-music" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9ee4b7f90b.mp3?filename=finding-her-117467.mp3" autoplay loop></audio>
+<button id="music-btn">🔊 Play / Pause Music</button>
+
+<script>
+const main = document.getElementById('main-content');
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-btn');
+
+musicBtn.onclick = () => {
+  if(music.paused){
+    music.play();
+    musicBtn.innerText="🔊 Pause Music";
+  }else{
+    music.pause();
+    musicBtn.innerText="🎵 Play Music";
+  }
+};
+
+// PAGE 1: Balloon
+function showPage1(){
+  main.innerHTML=`
+    <div style="text-align:center;width:100%;">
+      <div class="balloon" id="balloon"></div>
+      <div id="msg"></div>
+    </div>
+  `;
+  document.getElementById('balloon').onclick=()=>{
+    document.getElementById('balloon').style.display='none';
+    document.getElementById('msg').innerHTML=`
+      <div class="popup-message">🎈 HAPPY BIRTHDAY SNEHA 💐</div>
+      <button class="next-btn" onclick="showPage2()">Next</button>
+    `;
+  };
+}
+
+// PAGE 2: Hearts game
+function showPage2(){
+  main.innerHTML=`
+    <div class="hearts-game">
+      <div style="font-size:1.5rem;color:#d43460;margin-bottom:8px;">Collect 3 Hearts!</div>
+      <div class="hearts-row" id="hearts-row">
+        ${'<span class="heart" onclick="collectHeart(this)">❤️</span>'.repeat(3)}
+      </div>
+      <div id="blast"></div>
+    </div>
+  `;
+  window.collected=0;
+}
+
+window.collectHeart=function(ele){
+  if(!ele.classList.contains('collected')){
+    ele.classList.add('collected');
+    window.collected+=1;
+    if(window.collected===3){
+      document.getElementById('blast').innerHTML=`
+        <div class="lovely-blast">
+          1.) If I am candle 🕯️ you are my thread.<br>
+          2.) If I am Perfume you are my fragrance. 🤭<br>
+          3.) All I want to say that you are my everything I am nothing without you. 💐
+        </div>
+        <button class="next-btn" onclick="showPage3()">Next</button>
+      `;
+    }
+  }
+}
+
+// PAGE 3: VIP Card
+function showPage3(){
+  main.innerHTML=`
+    <div>
+      <div style="font-size:1.5rem;color:#d43460;">🤭 Click this emoji to get your surprise VIP Card!</div>
+      <div class="surprise-img" onclick="showVIPCard()">🎉</div>
+      <div id="vip-card-container"></div>
+    </div>
+  `;
+}
+
+function showVIPCard(){
+  const container=document.getElementById('vip-card-container');
+  container.innerHTML=`
+    <div class="vip-card">
+      <strong>Yippie! You got a VIP CARD 💳🎉</strong><br><br>
+      Vaise to mai har baat Mannta hu aapki lekin fr bhi ab aap jo bhi kahoge vaisa karuga.
+    </div>
+    <button class="next-btn" onclick="showPage4()">Next</button>
+  `;
+}
+
+// PAGE 4: Final Message
+function showPage4(){
+  main.innerHTML=`
+    <div class="final-message cute-effect">
+      <strong>A Special Message For my Sneha My Baby Doll My everything. 💐🤭</strong>
+      <br><br>
+      Happy Happy and Happiest Birthday to you my World.<br>
+      Always stay happy in life.<br>
+      I want to live rest of my life with you and also I prayer to God that in next Births you will become my partner.<br>
+      I Don't know how and why I attached with you of this level in very short time.😄<br>
+      This is like a miracle.🤭<br>
+      But as the time going am now addicted to you like a Water for a Plant.<br>
+      I will never gonna do any thing in my life that hurts you. I Promise it. 💐<br>
+      If you got any misunderstanding about me Just tell me and clear it...<br>
+      I will never be a wrong guy.<br><br>
+      A Best try to give a great wish on your 18th birthday and So on.<br>
+      Always be Happy 😊 In life.<br>
+      <br> Happy Happy and Happy wala Birthday my life 🤭 </br>
+    </div>
+    <div style="text-align:center;margin-top:30px;">
+      <span style="font-size:2.5rem;color:#d43460;">💖🌹🎉</span>
+    </div>
+  `;
+}
+
+// Start website
+showPage1();
+</script>
+</body>
+</html>
